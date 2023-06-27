@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class Solution {
 
     public static int minSubArrayLen(int target, int[] nums) {
-        /*//可以对数组进行排序处理吗，不可以，因为就会改变数组的原始顺序，就无法找到连续子数组了
+        /*//可以对数组进行排序处理吗，不可以，因为排序就会改变数组的原始顺序，就无法找到连续子数组了
         int n = nums.length;
         int sum = 0;
         for(int i = 0; i<n; i++){
@@ -34,7 +34,7 @@ public class Solution {
             //右移start指针的条件
             while(sum >= target ){ //内层while循环，由于target是个常数，所以执行次数是常量级
                 sum -= nums[start]; //满足该条件说明和sum有点太大，需要减去nums[start]
-                ans = Math.min(ans, end-start+1);
+                ans = Math.min(ans, end-start+1); //结果取最小值，ans是初始长度，end-start+1是动态长度
                 ++start;
             }
             ++end; //默认右移end
